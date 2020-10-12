@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssetTargetFallback>$(AssetTargetFallback);portable-net45+win8+wp8+wpa81;</AssetTargetFallback>
+    <AssemblyName>oct2020.Migrator</AssemblyName>
+    <OutputType>Exe</OutputType>
+    <PackageId>oct2020.Migrator</PackageId>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Update="appsettings.json;log4net.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Abp.Castle.Log4Net" Version="5.13.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\oct2020.Core\oct2020.Core.csproj" />
+    <ProjectReference Include="..\oct2020.EntityFrameworkCore\oct2020.EntityFrameworkCore.csproj" />
+  </ItemGroup>
+</Project>
